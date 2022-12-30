@@ -18,9 +18,14 @@ const productSchema = new Schema({
   imageUrl: {
     type: String,
     required: true
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }
 }); //required set to true set that title is must restrict some flexiblity. It helps to structure data
-
+    //ref is used to tell which model is used to populate
 
 module.exports = mongoose.model('Product', productSchema) //model is important to connect a schema to a name 
 
